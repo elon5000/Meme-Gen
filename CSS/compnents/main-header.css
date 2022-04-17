@@ -1,0 +1,67 @@
+.main-header {
+    background-color: lightblue;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header-logo {
+    box-sizing: content-box;
+    font-size: 3.5rem;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
+    margin-left: 0rem;
+    padding-left: 2.2rem;
+}
+
+.header-logo:hover{
+    color: goldenrod;
+    transform: scale(1.1);
+    text-shadow: 0.5rem 0.6rem rgba(87, 85, 85, 0.178);
+}
+.header-logo:hover > .nuke {
+    color: rgb(160, 25, 25);
+}
+
+.nav-buttons-area {
+    text-align: center;
+    width: 25rem;
+    height: fit-content;
+    flex-wrap: wrap;
+    margin: 2rem;
+    margin-left: 0.5rem;
+    padding-left: 5rem;
+}
+
+.nav-buttons-area li {
+    margin-right: 3rem;
+    font-size: 1.3rem;
+    display: inline-block;
+    flex-wrap: wrap;
+}
+
+
+.utilty-buttons-group {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 2rem;
+    padding-right: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.utilty-button {
+    display: inline;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    background-color: rgba(218, 193, 52, 1);
+    border: 0.1rem black solid;
+}
+.utilty-button:hover {
+    transform: scale(1.2);
+    background-color: rgb(218, 160, 52);
+}

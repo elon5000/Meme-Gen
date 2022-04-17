@@ -1,0 +1,13 @@
+/* here well place all the css variables */
+
+:root {
+    --clr1: rgb(160, 25, 25);
+    --clr2: rgb(240, 238, 212);
+    --clr3: rgb(168, 152, 2);
+    --clr4: #000000;
+    --clr5: #000000;
+    --clr6: rgb(0, 0, 0);
+    --clr7: #000000;
+    --clr8: #000000;
+    --clr9: #000000;
+}

@@ -1,0 +1,32 @@
+.nightmode {
+    background-color: rgb(2, 2, 34);
+    color: var(--clr2);
+}
+.nightmode .header-logo {
+    color: var(--clr2);
+}
+.nightmode .main-header {
+        background-color: rgb(1, 1, 8);
+}
+.nightmode .saved-button{
+    color: var(--clr2);
+}
+.nightmode .about-button{
+    color: var(--clr2);
+}
+.nightmode .utilty-button{
+    color: var(--clr2);
+    background: var(--clr3);
+}
+.nightmode .footer-logo {
+    color: var(--clr2);
+}
+.nightmode .gallery-item:hover{
+    border: solid var(--clr3) 0.3rem;
+}
+.nightmode .text-editor-group{
+    background-color: rgb(21, 3, 75);
+}
+.nightmode .box-util-buttons li {
+    background: var(--clr1);
+}

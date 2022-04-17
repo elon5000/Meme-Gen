@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Nuke Meme Genrator</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="logo header-logo"><span class="nuke">Nuke</span> Meme Genrator</h1>
+        <ul class="nav nav-buttons-area">
+            <li class="nav-button"><a class="saved-button" href="#" onclick="openSavedModal()">Saved</a></li>
+            <li class="nav-button"><a class="about-button" href="#">About</a></li>
+        </ul>
+        <ul class="utilty-buttons-group">
+            <li><button class="utilty-button night-button" onclick="toggleNightMode(this)">Nightmode OFF</button></li>
+        </ul>
+    </header>
+    
+    <div class="saved-gallery hidden">
+        <h1>Saved Memes:</h1>
+        <div class="saved-memes-gallery"></div>
+    </div>
+
+    <div class="contact-us-modal hidden">
+        <h2>
+            Contact Us
+            <button class="close-modal-button">x</button>
+        </h2>
+        <ul class="contact-info-group">
+            <li><input class="contact-imput-group" type="text" placeholder="Your name"></li>
+            <li><input class="contact-imput-group" type="email" placeholder="your@email"></li>
+            <li><input class="contact-imput-group" type="text" placeholder="Subject"></li>
+            <li><input class="contact-imput-group" type="text" placeholder="Your Message"></li>
+        </ul>
+        <button class="send-button">Send!</button>
+    </div>
+
+    <main>
+        <div class="editor-modal hidden">
+            <div class="editor-modal-container">
+                <section class="text-editor-group">
+                    <ul class="text-editor-tools">
+                        <li><button class="tool buttons switch-line-button" onclick="switchLine()">switch</button>
+                        <li><input class="tool buttons color-picker" type="color" onchange="changeTextColor(this)"></li>
+                        <li><button class="tool buttons font-size-increase" onclick="increaseFontSize()">A+</button>
+                        </li>
+                        <li><button class="tool buttons font-size-decrease" onclick="decreaseFontSize()">A-</button>
+                        </li>
+                        <li>
+                            <button class="tool buttons text-align-toggle" data-align="right"
+                                onclick="changeTextAlign(this)">Left</button>
+                            <button class="tool buttons text-align-toggle" data-align="center"
+                                onclick="changeTextAlign(this)">Center</button>
+                            <button class="tool buttons text-align-toggle" data-align="left"
+                                onclick="changeTextAlign(this)">Right</button>
+                        </li>
+                        <li>
+                            <button class="tool buttons uppercase-toggle uppercase"
+                                onclick="toggleUpperCase(this)">uppercase</button>
+                        </li>
+                        <li>
+                            <select name="fonts" class="font-selector" onchange="changeFont(this)">
+                                <option value="impact">Impact</option>
+                                <option value="minecraft">Minecraft</option>
+                                <option value="arial">Arial</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select name="stickers" class="sticker-selector" onchange="placeSticker(this)">
+                                <option value="😂">😂</option>
+                                <option value="😢">😢</option>
+                                <option value="🔥">🔥</option>
+                                <option value="💖">💖</option>
+                                <option value="💯">💯</option>
+                                <option value="🙏">🙏</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="text-input">
+                        <li>
+                            <input class="top-text-input" type="text" placeholder="Top Text Here"
+                                onchange="updateTopText(this)">
+                            <label class="top-text-label">TOP TEXT</label>
+                            <button class="delete-button" onclick="deleteTopText()">x</button>
+                        </li>
+                        <li>
+                            <input class="botton-text-input" type="text" placeholder="Bottom Text Here"
+                                onchange="updateBottomText(this)" onclick="toggleMarked(this)">
+                            <label class="bottom-text-label">BOTTOM TEXT</label>
+                            <button class="delete-button" onclick="deleteBottomText()">x</button>
+                        </li>
+                    </ul>
+                </section>
+
+                <canvas id="canvas" width="300" height="300"></canvas>
+
+                <section class="canvas-control-box">
+                    <ul class="box-util-buttons">
+                        <li><button class="save-image-button" onclick="saveMeme(this)">Save</button></li>
+                        <li><button class="share-image-button" onclick="shareMeme()">Share</button></li>
+                        <li><button class="close-modal-button" onclick="closeCanvasModal()">Close</button></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <section class="template-picker">
+            <article class="guide first-step">
+                <h2>Upload an image to use as a template:</h2>
+                <input class="img-input" type="file" accept="image/png, image/jpeg" onchange="readURL(this)">
+                <input class="tags-input" type="text" placeholder="add tags: meme, cool, lit">
+                <button class="upload-template" onclick="addNewTemplate()">Upload</button>
+                <p>
+                <h3>↓ You can also choose an image from the bank below ↓</h3>
+                </p>
+                <p>You can filter the results with keywords:</p>
+                <input class="template-filter" type="search" placeholder="cat, trump, cute..."
+                    onchange="filterTemplates(this)">
+            </article>
+            <div class="gallery-grid"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <h2 class="logo footer-logo">Nuke Meme Genrator©</h2>
+        <h4 class="cofferight">cofferight 2022 ©</h4>
+        <button class="contact-us-button">Feel free to contact us here</button>
+        <h6>created by Elon Barzani</h6>
+    </footer>
+
+    <script src="/JS/upload/upload.js"></script>
+    <script src="/JS/services/util-service.js"></script>
+    <script src="/JS/services/gallery-service.js"></script>
+    <script src="/JS/main/gallery-main.js"></script>
+    <script src="/JS/services/canvas-service.js"></script>
+    <script src="/JS/main/canvas-main.js"></script>
+    <script src="/JS/main/general-main.js"></script>
+    <script src="/JS/storage/storage.js"></script>
+</body>
+
+</html>

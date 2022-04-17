@@ -1,0 +1,10 @@
+.hidden {
+    display: none;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.marked {
+    background-color: rgba(28, 127, 185, 0.425);
+    color: white;
+}
