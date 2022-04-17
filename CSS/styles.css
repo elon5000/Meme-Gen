@@ -1,21 +1,21 @@
 /* here we will import all the other css files BY THIS OREDER !!!*/
 
 /* SETUP */
-@import '/css/setup/vars.css';
-@import '/css/setup/typography.css';
-@import '/CSS/setup/keyframes.css';
+@import 'setup/vars.css';
+@import 'setup/typography.css';
+@import 'setup/keyframes.css';
 
 /* BASICS */
-@import '/css/basic/base.css';
-@import '/css/basic/helpers.css';
-@import '/css/basic/layout.css';
+@import 'basic/base.css';
+@import 'basic/helpers.css';
+@import 'basic/layout.css';
 
 /* COMPNENTS */
-@import '/css/compnents/cards.css';
-@import '/css/compnents/main-header.css';
-@import '/css/compnents/main.css';
-@import '/css/compnents/editor-modal.css';
-@import '/css/compnents/saved-memes.css';
+@import 'compnents/cards.css';
+@import 'compnents/main-header.css';
+@import 'compnents/main.css';
+@import 'compnents/editor-modal.css';
+@import 'compnents/saved-memes.css';
 
 /* NIGHTMODE */
-@import '/css/nightmode.css';
+@import 'nightmode.css';
